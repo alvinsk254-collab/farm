@@ -87,26 +87,6 @@ export const products: Product[] = [
   inStock: true,
   imageUrl: "/images/products/insecticides/METHOLING.png"
 },
-{
-  id: 14,
-  name: "CABINO 150 SC",
-  category: "insecticides",
-  description: "Insecticide for control of diamondback moth and Tuta absoluta.",
-  price: "",
-  rating: 4.9,
-  features: ["Sodium channel blocker", "Specialist for moths", "Paralysis inducer", "Selective action"],
-  icon: "Zap",
-  color: "from-red-500 to-orange-500",
-  activeIngredient: "Indoxacarb 150g/L",
-  targetPests: ["Diamondback moth", "Tuta absoluta", "Caterpillars", "Bollworms", "Army worms"],
-  targetCrops: ["Cabbage", "Tomatoes", "French beans"],
-  usage: "12.5ml/20L of water",
-  applicationRate: "12.5ml/20L of water",
-  packSizes: ["50 mls", "100 mls", "250 mls", "500 mls", "1Ltr"],
-  modeOfAction: "Blocks neuronal sodium channels in insects leading to paralysis and death.",
-  inStock: true,
-  imageUrl: "/images/products/insecticides/CABINO.png"
-},
 
   // FUNGICIDES
 {
