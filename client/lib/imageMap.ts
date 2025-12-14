@@ -10,15 +10,12 @@ const realProductImages = {
   insecticides: {
     "PROJECTOR.png": "/images/products/insecticides/PROJECTOR.png",
     "CYPERTOX.png": "/images/products/insecticides/CYPERTOX.png",
-    "CARNON.png": "/images/products/insecticides/CARNON.png",
     "METHOLING.png": "/images/products/insecticides/METHOLING.png",
   },
-  
+
   // Fungicides
   fungicides: {
     "AZODIN TOP.png": "/images/products/fungicides/AZODIN TOP.png",
-    "TROOP.png": "/images/products/fungicides/TROOP.png",
-    "NGUMI.png": "/images/products/fungicides/NGUMI.png",
     "TYTHINE.png": "/images/products/fungicides/TYTHINE.png",
     "COPCHEM.png": "/images/products/fungicides/COPCHEM.png",
   },
