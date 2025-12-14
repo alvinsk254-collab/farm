@@ -526,7 +526,6 @@ export const getFeaturedProducts = () => {
     products.find(p => p.id === 1), // FIRE ALL 480 SL (Herbicide)
     products.find(p => p.id === 27), // HYRICH (HIGH-P) (Fertilizer)
     products.find(p => p.id === 30), // FARM BOOSTER (Fertilizer)
-    products.find(p => p.id === 14), // CABINO 150 SC (Insecticide)
     products.find(p => p.id === 39), // HYLICK MAZIWA (Veterinary)
     products.find(p => p.id === 42), // KAOLIN (Veterinary)
   ];
