@@ -105,7 +105,7 @@ export const products: Product[] = [
   packSizes: ["50 mls", "100 mls", "250 mls", "500 mls", "1Ltr"],
   modeOfAction: "Blocks neuronal sodium channels in insects leading to paralysis and death.",
   inStock: true,
-  imageUrl: "/images/products/insecticides/CARNON.png"
+  imageUrl: "/images/products/insecticides/CABINO.png"
 },
 
   // FUNGICIDES
