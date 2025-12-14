@@ -523,11 +523,11 @@ export const searchProducts = (searchTerm: string) => {
 
 export const getFeaturedProducts = () => {
   const featured = [
-    products.find(p => p.id === 29), // HYRICH ZINC (Fertilizer)
-    products.find(p => p.id === 26), // HYRICH (HIGH-K) (Fertilizer)
-    products.find(p => p.id === 38), // BLACK EAGLE (Fertilizer)
-    products.find(p => p.id === 19), // NGUMI 500 SC (Fungicide)
-    products.find(p => p.id === 31), // ZINBOR (Fertilizer)
+    products.find(p => p.id === 1), // FIRE ALL 480 SL (Herbicide)
+    products.find(p => p.id === 27), // HYRICH (HIGH-P) (Fertilizer)
+    products.find(p => p.id === 28), // HYRICH CALCIUM (Fertilizer)
+    products.find(p => p.id === 30), // FARM BOOSTER (Fertilizer)
+    products.find(p => p.id === 14), // CABINO 150 SC (Insecticide)
   ];
   return featured.filter(Boolean) as Product[];
 };
