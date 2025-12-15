@@ -47,12 +47,14 @@ export const ProductCard = ({
       className="group h-full"
     >
       <Card
-        className={`h-full border-0 shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden rounded-3xl bg-gradient-to-br from-white to-gray-50 ${
+        className={`h-full border-0 shadow-2xl hover:shadow-3xl transition-all duration-300 overflow-hidden rounded-3xl bg-gradient-to-br from-white to-gray-50 group-hover:shadow-emerald-500/20 ${
           viewMode === "list" ? "flex flex-row" : "flex flex-col"
         }`}
         style={{
           boxShadow: '0 20px 50px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1)',
-          transform: 'translateZ(20px)'
+          transform: 'translateZ(20px)',
+          backfaceVisibility: 'hidden',
+          WebkitFontSmoothing: 'antialiased'
         }}
       >
         {/* Product Image Container */}
