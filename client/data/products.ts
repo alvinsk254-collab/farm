@@ -87,6 +87,46 @@ export const products: Product[] = [
   inStock: true,
   imageUrl: "/images/products/insecticides/METHOLING.png"
 },
+{
+  id: 11,
+  name: "CARNON 700 WDG",
+  category: "insecticides",
+  description: "Insecticide for the control of thrips, aphids and white flies.",
+  price: "",
+  rating: 4.8,
+  features: ["Nervous system destroyer", "Acetylcholine antagonist", "Water dispersible", "Systemic"],
+  icon: "Zap",
+  color: "from-red-500 to-orange-500",
+  activeIngredient: "Acetamiprid 700g/L",
+  targetPests: ["Thrips", "Aphids", "White flies", "Jassids", "Plant hoppers"],
+  targetCrops: ["Tomatoes", "Pigeon peas", "Vegetables", "Cereals"],
+  usage: "2.5g/20L of water",
+  applicationRate: "2.5g/20L of water",
+  packSizes: ["5 g", "25g", "100g"],
+  modeOfAction: "Destroys insects' nervous system by antagonising Acetylcholine receptor.",
+  inStock: true,
+  imageUrl: "/images/products/insecticides/CARNON.png"
+},
+{
+  id: 12,
+  name: "CYPERTOX",
+  category: "insecticides",
+  description: "Broad-spectrum insecticide for control of multiple pest types.",
+  price: "",
+  rating: 4.7,
+  features: ["Broad-spectrum", "Fast-acting", "Contact action", "Residual activity"],
+  icon: "Zap",
+  color: "from-red-500 to-orange-500",
+  activeIngredient: "Cypermethrin 100 g/L",
+  targetPests: ["Aphids", "Caterpillars", "Beetles", "Leaf hoppers", "Plant bugs"],
+  targetCrops: ["Maize", "Vegetables", "Fruits", "Cotton"],
+  usage: "10ml/20L of water",
+  applicationRate: "10ml/20L of water",
+  packSizes: ["50 mls", "100 mls", "250 mls", "500 mls", "1Ltr"],
+  modeOfAction: "Disrupts neuronal function in insects through sodium channel interference.",
+  inStock: true,
+  imageUrl: "/images/products/insecticides/CYPERTOX.png"
+},
 
   // FUNGICIDES
 {
