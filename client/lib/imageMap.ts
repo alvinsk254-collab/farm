@@ -111,6 +111,7 @@ export const productImageMap: Record<number, string> = {
   8: realProductImages.insecticides["PROJECTOR.png"],
   9: realProductImages.insecticides["CYPERTOX.png"],
   10: realProductImages.insecticides["METHOLING.png"],
+  11: realProductImages.insecticides["CARNON.png"],
   12: realProductImages.insecticides["CYPERTOX.png"],
   13: realProductImages.insecticides["PROJECTOR.png"],
   15: realProductImages.insecticides["METHOLING.png"],
@@ -118,6 +119,8 @@ export const productImageMap: Record<number, string> = {
 
   // FUNGICIDES
   17: realProductImages.fungicides["AZODIN TOP.png"],
+  18: realProductImages.fungicides["TROOP.png"],
+  19: realProductImages.fungicides["NGUMI.png"],
   20: realProductImages.fungicides["TYTHINE.png"],
   21: realProductImages.fungicides["COPCHEM.png"],
 
