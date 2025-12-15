@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    /* Enable GPU acceleration for smooth animations */
+    will-change: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* Image optimization for faster loading */
+  img {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+    content-visibility: auto;
+  }
+
+  /* 3D card effects */
+  .card {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
 @layer base {
   /**
    * Tailwind CSS theme
@@ -102,7 +133,11 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family:
+      "Inter",
+      system-ui,
+      -apple-system,
+      sans-serif;
     line-height: 1.6;
   }
 
@@ -146,7 +181,7 @@
   }
 
   .leaf-pattern::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -164,13 +199,15 @@
   }
 
   .agriculture-shadow {
-    box-shadow: 0 4px 6px -1px rgba(22, 163, 74, 0.1), 
-                0 2px 4px -1px rgba(22, 163, 74, 0.06);
+    box-shadow:
+      0 4px 6px -1px rgba(22, 163, 74, 0.1),
+      0 2px 4px -1px rgba(22, 163, 74, 0.06);
   }
 
   .agriculture-shadow-lg {
-    box-shadow: 0 20px 25px -5px rgba(22, 163, 74, 0.1), 
-                0 10px 10px -5px rgba(22, 163, 74, 0.04);
+    box-shadow:
+      0 20px 25px -5px rgba(22, 163, 74, 0.1),
+      0 10px 10px -5px rgba(22, 163, 74, 0.04);
   }
 
   /* Enhanced mobile-responsive components */
@@ -302,46 +339,68 @@
 
   /* Mobile-first breakpoint indicators (for debugging) */
   .debug-breakpoint::before {
-    content: 'XS';
+    content: "XS";
     @apply fixed top-4 right-4 bg-red-500 text-white px-2 py-1 text-xs rounded z-50;
   }
 
   @screen sm {
-    .debug-breakpoint::before { content: 'SM'; @apply bg-blue-500; }
+    .debug-breakpoint::before {
+      content: "SM";
+      @apply bg-blue-500;
+    }
   }
 
   @screen md {
-    .debug-breakpoint::before { content: 'MD'; @apply bg-green-500; }
+    .debug-breakpoint::before {
+      content: "MD";
+      @apply bg-green-500;
+    }
   }
 
   @screen lg {
-    .debug-breakpoint::before { content: 'LG'; @apply bg-yellow-500; }
+    .debug-breakpoint::before {
+      content: "LG";
+      @apply bg-yellow-500;
+    }
   }
 
   @screen xl {
-    .debug-breakpoint::before { content: 'XL'; @apply bg-purple-500; }
+    .debug-breakpoint::before {
+      content: "XL";
+      @apply bg-purple-500;
+    }
   }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes pulse-green {
-  0%, 100% { 
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
-  50% { 
+  50% {
     opacity: 0.8;
     transform: scale(1.05);
   }
 }
 
 @keyframes grow {
-  from { transform: scale(0.95); }
-  to { transform: scale(1); }
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 @keyframes slideInFromBottom {
@@ -378,8 +437,12 @@
 }
 
 @keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 /* Mobile device optimizations */
@@ -390,7 +453,9 @@
   }
 
   /* Optimize touch interactions */
-  button, a, [role="button"] {
+  button,
+  a,
+  [role="button"] {
     -webkit-tap-highlight-color: rgba(22, 163, 74, 0.2);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -452,7 +517,9 @@
   }
 
   .mobile-safe-height {
-    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
+    height: calc(
+      100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom)
+    );
   }
 
   /* Enhanced responsive spacing */
@@ -470,6 +537,34 @@
 
   .mx-mobile {
     @apply mx-4 sm:mx-6 lg:mx-8;
+  }
+
+  /* 3D card and effect utilities */
+  .card-3d {
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+  }
+
+  .card-3d-inner {
+    transition: transform 0.3s ease-out;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+
+  .card-3d:hover .card-3d-inner {
+    transform: rotateY(5deg) rotateX(3deg);
+    -webkit-transform: rotateY(5deg) rotateX(3deg);
+  }
+
+  .image-3d {
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+    -webkit-filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+  }
+
+  /* Fast loading indicator */
+  .fast-load {
+    content-visibility: auto;
+    contain: layout style paint;
   }
 
   /* Responsive text utilities */
@@ -513,16 +608,18 @@
 /* High DPI / Retina display optimizations */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .agriculture-shadow {
-    box-shadow: 0 8px 12px -2px rgba(22, 163, 74, 0.08), 
-                0 4px 8px -2px rgba(22, 163, 74, 0.04);
+    box-shadow:
+      0 8px 12px -2px rgba(22, 163, 74, 0.08),
+      0 4px 8px -2px rgba(22, 163, 74, 0.04);
   }
 }
 
 /* Dark mode optimizations */
 @media (prefers-color-scheme: dark) {
   .agriculture-shadow {
-    box-shadow: 0 4px 6px -1px rgba(22, 163, 74, 0.2), 
-                0 2px 4px -1px rgba(22, 163, 74, 0.1);
+    box-shadow:
+      0 4px 6px -1px rgba(22, 163, 74, 0.2),
+      0 2px 4px -1px rgba(22, 163, 74, 0.1);
   }
 }
 
@@ -533,7 +630,7 @@
   .grow-animation {
     animation: none;
   }
-  
+
   * {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;

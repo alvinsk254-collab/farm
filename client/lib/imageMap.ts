@@ -5,24 +5,21 @@
 const realProductImages = {
   // Herbicides
   herbicides: "/images/products/herbicides/FIRE ALL.png",
-  
+
   // Insecticides
   insecticides: {
     "PROJECTOR.png": "/images/products/insecticides/PROJECTOR.png",
     "CYPERTOX.png": "/images/products/insecticides/CYPERTOX.png",
-    "CARNON.png": "/images/products/insecticides/CARNON.png",
     "METHOLING.png": "/images/products/insecticides/METHOLING.png",
   },
-  
+
   // Fungicides
   fungicides: {
     "AZODIN TOP.png": "/images/products/fungicides/AZODIN TOP.png",
-    "TROOP.png": "/images/products/fungicides/TROOP.png",
-    "NGUMI.png": "/images/products/fungicides/NGUMI.png",
     "TYTHINE.png": "/images/products/fungicides/TYTHINE.png",
     "COPCHEM.png": "/images/products/fungicides/COPCHEM.png",
   },
-  
+
   // Fertilizers
   fertilizers: {
     "HYRICH.png": "/images/products/fertilizers/HYRICH.png",
@@ -34,12 +31,14 @@ const realProductImages = {
     "ROOT ENTUBER.png": "/images/products/fertilizers/ROOT ENTUBER.png",
     "SUPERCROP.png": "/images/products/fertilizers/SUPERCROP.png",
     "WY-GROW STARTER.png": "/images/products/fertilizers/WY-GROW STARTER.png",
-    "WY-GROW VEGETATIVE.png": "/images/products/fertilizers/WY-GROW VEGETATIVE.png",
-    "WY-GROW FRUIT & FLOWER.png": "/images/products/fertilizers/WY-GROW FRUIT & FLOWER.png",
+    "WY-GROW VEGETATIVE.png":
+      "/images/products/fertilizers/WY-GROW VEGETATIVE.png",
+    "WY-GROW FRUIT & FLOWER.png":
+      "/images/products/fertilizers/WY-GROW FRUIT & FLOWER.png",
     "WY-GROW CALCIUM.png": "/images/products/fertilizers/WY-GROW CALCIUM.png",
     "BLACK - EAGLE.png": "/images/products/fertilizers/BLACK - EAGLE.png",
   },
-  
+
   // Veterinary
   veterinary: {
     "HYLICK MAZIWA.png": "/images/products/veterinary/HYLICK MAZIWA.png",
@@ -49,57 +48,70 @@ const realProductImages = {
 };
 
 // Professional category colors and styling for placeholders
-const placeholderColors: Record<string, { bg: string; gradientFrom: string; gradientTo: string; text: string; icon: string }> = {
+const placeholderColors: Record<
+  string,
+  {
+    bg: string;
+    gradientFrom: string;
+    gradientTo: string;
+    text: string;
+    icon: string;
+  }
+> = {
   herbicides: {
     bg: "8fcd56",
     gradientFrom: "86efac",
     gradientTo: "4ade80",
     text: "ffffff",
-    icon: "🌿"
+    icon: "🌿",
   },
   fungicides: {
     bg: "0ea5e9",
     gradientFrom: "38bdf8",
     gradientTo: "0284c7",
     text: "ffffff",
-    icon: "🛡️"
+    icon: "🛡️",
   },
   insecticides: {
     bg: "f97316",
     gradientFrom: "fb923c",
     gradientTo: "ea580c",
     text: "ffffff",
-    icon: "⚡"
+    icon: "⚡",
   },
   fertilizers: {
     bg: "eab308",
     gradientFrom: "facc15",
     gradientTo: "ca8a04",
     text: "1f2937",
-    icon: "🌱"
+    icon: "🌱",
   },
   veterinary: {
     bg: "ec4899",
     gradientFrom: "f472b6",
     gradientTo: "db2777",
     text: "ffffff",
-    icon: "❤️"
+    icon: "❤️",
   },
   all: {
     bg: "64748b",
     gradientFrom: "94a3b8",
     gradientTo: "475569",
     text: "ffffff",
-    icon: "📦"
+    icon: "📦",
   },
 };
 
 // Generate a professional placeholder image with improved styling
-const generateProPlaceholder = (productName: string, productId: number, category: string): string => {
+const generateProPlaceholder = (
+  productName: string,
+  productId: number,
+  category: string,
+): string => {
   const colors = placeholderColors[category] || placeholderColors.all;
   const shortName = productName.substring(0, 15).toUpperCase();
   const encodedName = encodeURIComponent(shortName);
-  
+
   // Using DiceBear API for more professional placeholders
   return `https://api.dicebear.com/7.x/shapes/svg?seed=${productId}&scale=80&backgroundColor=${colors.bg}&opacity=0.8`;
 };
@@ -117,7 +129,6 @@ export const productImageMap: Record<number, string> = {
   11: realProductImages.insecticides["CARNON.png"],
   12: realProductImages.insecticides["CYPERTOX.png"],
   13: realProductImages.insecticides["PROJECTOR.png"],
-  14: realProductImages.insecticides["CARNON.png"],
   15: realProductImages.insecticides["METHOLING.png"],
   16: realProductImages.insecticides["PROJECTOR.png"],
 
@@ -161,25 +172,33 @@ export const categoryImageMap: Record<string, string> = {
 };
 
 // Get product image with fallback to professional placeholder
-export const getProductImage = (productId: number, category: string, productName?: string): string => {
+export const getProductImage = (
+  productId: number,
+  category: string,
+  productName?: string,
+): string => {
   const image = productImageMap[productId];
-  
+
   if (image) {
     return image;
   }
-  
+
   // Fallback to professional placeholder
-  return generateProPlaceholder(productName || `Product ${productId}`, productId, category);
+  return generateProPlaceholder(
+    productName || `Product ${productId}`,
+    productId,
+    category,
+  );
 };
 
 // Get category image with fallback
 export const getCategoryImage = (category: string): string => {
   const image = categoryImageMap[category];
-  
+
   if (image) {
     return image;
   }
-  
+
   // Fallback to placeholder
   const colors = placeholderColors[category] || placeholderColors.all;
   const categoryName = category.replace(/([A-Z])/g, " $1").trim();
@@ -187,7 +206,9 @@ export const getCategoryImage = (category: string): string => {
 };
 
 // Get a contrasting color for product cards
-export const getCategoryColor = (category: string): { bg: string; text: string } => {
+export const getCategoryColor = (
+  category: string,
+): { bg: string; text: string } => {
   const colors = placeholderColors[category] || placeholderColors.all;
   return {
     bg: colors.bg,
