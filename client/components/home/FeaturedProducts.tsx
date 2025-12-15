@@ -99,7 +99,13 @@ const FeaturedProducts = () => {
                 </div>
 
                 {/* Product Image Section - Larger */}
-                <div className="h-72 sm:h-80 lg:h-96 relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                <div
+                  className="h-72 sm:h-80 lg:h-96 relative overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-gray-150 group-hover:to-gray-250 flex items-center justify-center transition-colors"
+                  style={{
+                    perspective: '1500px',
+                    boxShadow: 'inset 0 10px 40px rgba(0,0,0,0.1), inset 0 -10px 40px rgba(255,255,255,0.5)'
+                  }}
+                >
                   <img
                     src={getProductImage(product.id, product.category, product.name)}
                     alt={`${product.name} - ${product.description}`}
@@ -107,8 +113,12 @@ const FeaturedProducts = () => {
                     loading="lazy"
                     decoding="async"
                     fetchPriority="high"
+                    style={{
+                      filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.1))',
+                      transformStyle: 'preserve-3d'
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
                   
                   {/* Stock Status Badge */}
                   {product.inStock && (
