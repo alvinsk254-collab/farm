@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, BookOpen, CheckCircle } from "lucide-react";
@@ -41,8 +47,17 @@ export const ProductCard = ({
       id={`product-${product.id}`}
       initial={{ opacity: 0, y: 40, rotateX: -15 }}
       animate={{ opacity: 1, y: 0, rotateX: 0 }}
-      transition={{ duration: 0.7, delay: index * 0.05, type: "spring", stiffness: 100 }}
-      whileHover={{ y: -12, scale: viewMode === "grid" ? 1.08 : 1.03, rotateX: 5 }}
+      transition={{
+        duration: 0.7,
+        delay: index * 0.05,
+        type: "spring",
+        stiffness: 100,
+      }}
+      whileHover={{
+        y: -12,
+        scale: viewMode === "grid" ? 1.08 : 1.03,
+        rotateX: 5,
+      }}
       style={{ perspective: 1000 }}
       className="group h-full"
     >
@@ -51,10 +66,11 @@ export const ProductCard = ({
           viewMode === "list" ? "flex flex-row" : "flex flex-col"
         }`}
         style={{
-          boxShadow: '0 20px 50px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1)',
-          transform: 'translateZ(20px)',
-          backfaceVisibility: 'hidden',
-          WebkitFontSmoothing: 'antialiased'
+          boxShadow:
+            "0 20px 50px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1)",
+          transform: "translateZ(20px)",
+          backfaceVisibility: "hidden",
+          WebkitFontSmoothing: "antialiased",
         }}
       >
         {/* Product Image Container */}
@@ -63,8 +79,9 @@ export const ProductCard = ({
             viewMode === "list" ? "w-56 flex-shrink-0" : "h-72 sm:h-80 w-full"
           }`}
           style={{
-            boxShadow: 'inset 0 10px 30px rgba(0,0,0,0.05), inset 0 -10px 30px rgba(255,255,255,0.8), 0 10px 30px rgba(0,0,0,0.1)',
-            perspective: '1200px'
+            boxShadow:
+              "inset 0 10px 30px rgba(0,0,0,0.05), inset 0 -10px 30px rgba(255,255,255,0.8), 0 10px 30px rgba(0,0,0,0.1)",
+            perspective: "1200px",
           }}
         >
           {/* Loading skeleton */}
@@ -119,10 +136,10 @@ export const ProductCard = ({
             className="absolute top-3 left-3 z-10"
           >
             <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-bold shadow-lg backdrop-blur-sm px-3 py-1.5">
-              {product.category.charAt(0).toUpperCase() + product.category.slice(1)}
+              {product.category.charAt(0).toUpperCase() +
+                product.category.slice(1)}
             </Badge>
           </motion.div>
-
 
           {/* Bottom Left Badge - Stock Status */}
           {product.inStock && (
@@ -141,19 +158,25 @@ export const ProductCard = ({
         </div>
 
         {/* Product Content */}
-        <div className={`flex flex-col flex-1 bg-gradient-to-b from-white to-gray-50 ${viewMode === "list" ? "p-4 sm:p-5" : "p-3 sm:p-4"}`}>
+        <div
+          className={`flex flex-col flex-1 bg-gradient-to-b from-white to-gray-50 ${viewMode === "list" ? "p-4 sm:p-5" : "p-3 sm:p-4"}`}
+        >
           {/* Header */}
           <CardHeader className="pb-2 p-0 mb-2">
             <CardTitle
               className={`group-hover:text-green-600 transition-colors line-clamp-2 font-bold text-shadow ${
-                viewMode === "list" ? "text-base sm:text-lg" : "text-sm sm:text-base"
+                viewMode === "list"
+                  ? "text-base sm:text-lg"
+                  : "text-sm sm:text-base"
               }`}
             >
               {product.name}
             </CardTitle>
-            <CardDescription className={`text-gray-600 mt-0.5 leading-snug ${
-              viewMode === "list" ? "text-xs sm:text-sm" : "text-xs"
-            }`}>
+            <CardDescription
+              className={`text-gray-600 mt-0.5 leading-snug ${
+                viewMode === "list" ? "text-xs sm:text-sm" : "text-xs"
+              }`}
+            >
               {product.description}
             </CardDescription>
           </CardHeader>
