@@ -59,11 +59,12 @@ export const ProductCard = ({
       >
         {/* Product Image Container */}
         <div
-          className={`relative overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-150 ${
+          className={`relative overflow-hidden bg-gradient-to-br from-gray-50 via-gray-100 to-gray-150 group-hover:from-gray-100 group-hover:via-gray-120 group-hover:to-gray-200 transition-colors ${
             viewMode === "list" ? "w-56 flex-shrink-0" : "h-72 sm:h-80 w-full"
           }`}
           style={{
-            boxShadow: 'inset 0 10px 30px rgba(0,0,0,0.05), inset 0 -10px 30px rgba(255,255,255,0.8)'
+            boxShadow: 'inset 0 10px 30px rgba(0,0,0,0.05), inset 0 -10px 30px rgba(255,255,255,0.8), 0 10px 30px rgba(0,0,0,0.1)',
+            perspective: '1200px'
           }}
         >
           {/* Loading skeleton */}
