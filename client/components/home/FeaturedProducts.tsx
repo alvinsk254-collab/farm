@@ -80,10 +80,18 @@ const FeaturedProducts = () => {
             <motion.div
               key={product.id}
               variants={itemVariants}
-              whileHover={{ y: -12, scale: 1.03 }}
+              whileHover={{ y: -12, scale: 1.05, rotateX: 3 }}
               transition={{ duration: 0.3 }}
+              style={{ perspective: '1000px' }}
             >
-              <Card className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group bg-white relative">
+              <Card
+                className="h-full border-0 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group bg-white relative"
+                style={{
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.12), 0 10px 20px rgba(0,0,0,0.08)',
+                  backfaceVisibility: 'hidden',
+                  WebkitFontSmoothing: 'antialiased'
+                }}
+              >
                 {/* Quality Badge */}
                 <div className="absolute top-4 left-4 z-20">
                   <Badge className="bg-gradient-to-r from-green-400 to-green-600 text-white text-xs font-bold px-3 py-1.5">
