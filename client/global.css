@@ -503,6 +503,34 @@
     @apply mx-4 sm:mx-6 lg:mx-8;
   }
 
+  /* 3D card and effect utilities */
+  .card-3d {
+    perspective: 1200px;
+    -webkit-perspective: 1200px;
+  }
+
+  .card-3d-inner {
+    transition: transform 0.3s ease-out;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+
+  .card-3d:hover .card-3d-inner {
+    transform: rotateY(5deg) rotateX(3deg);
+    -webkit-transform: rotateY(5deg) rotateX(3deg);
+  }
+
+  .image-3d {
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+    -webkit-filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+  }
+
+  /* Fast loading indicator */
+  .fast-load {
+    content-visibility: auto;
+    contain: layout style paint;
+  }
+
   /* Responsive text utilities */
   .text-responsive-xs {
     @apply text-xs sm:text-sm;
